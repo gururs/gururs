@@ -45,7 +45,7 @@ gem 'bootstrap-sass'
 #end
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 2.14.0.rc1'
   gem 'shoulda-matchers'
   gem 'machinist'
   gem 'capybara'
