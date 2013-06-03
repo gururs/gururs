@@ -11,7 +11,7 @@ gem 'thin'
 
 # Improvements
 gem 'jbuilder'
-gem 'inherited_resources'
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'simple_form'
 gem 'rails_admin', github: 'sferik/rails_admin', branch: 'rails-4'
 gem 'cancan'
