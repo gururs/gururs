@@ -10,7 +10,7 @@ Event.blueprint do
   name          { 'Encontro GURU-RS Maio' }
   enroll_url    { 'http://nos.vc/pt/projects/360-encontro-guru-rs-maio' }
   proposals_url { '' }
-  happens_at    { '' }
+  happens_at    { 30.days.from_now }
 end
 
 Talk.blueprint do
