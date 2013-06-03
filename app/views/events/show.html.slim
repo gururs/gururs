@@ -1,0 +1,16 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @event.name
+p
+  strong Enroll url:
+  = @event.enroll_url
+p
+  strong Proposals url:
+  = @event.proposals_url
+p
+  strong Happens at:
+  = @event.happens_at
+
+= link_to 'Back', events_path
