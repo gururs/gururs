@@ -9,8 +9,8 @@ end
 Event.blueprint do
   name          { 'Encontro GURU-RS Maio' }
   enroll_url    { 'http://nos.vc/pt/projects/360-encontro-guru-rs-maio' }
-  proposals_url { 'http://call4paperz.com/events/30o-encontro-do-guru-sp' }
-  happens_at    { 30.days.from_now }
+  proposals_url { '' }
+  happens_at    { '' }
 end
 
 User.blueprint do
