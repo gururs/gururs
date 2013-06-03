@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20130603031920) do
     t.integer  "event_id",   null: false
     t.integer  "user_id"
     t.string   "title",      null: false
-    t.integer  "video_code"
-    t.integer  "audio_code"
+    t.string   "video_code"
+    t.string   "audio_code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -4,8 +4,8 @@ class CreateTalks < ActiveRecord::Migration
       t.references :event, index: true, null: false
       t.references :user, index: true
       t.string :title, null: false
-      t.integer :video_code
-      t.integer :audio_code
+      t.string :video_code
+      t.string :audio_code
 
       t.timestamps
     end
