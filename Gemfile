@@ -21,8 +21,7 @@ gem 'devise-i18n'
 # Authentication
 gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
 gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
+gem 'omniauth-github'
 
 # Frontend stuff
 gem 'jquery-rails'
