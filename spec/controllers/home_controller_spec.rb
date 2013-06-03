@@ -7,6 +7,11 @@ describe HomeController do
       expect(response).to be_success
     end
 
+    it "assigns next events as @events" do
+      Event.should_receive(:next).and_return(double.as_null_object)
+      get :index
+    end
+
     it "assigns at most 3 events as @events" do
       4.times { Event.make! }
       get :index
