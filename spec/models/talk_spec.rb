@@ -34,4 +34,22 @@ describe Talk do
       it { expect(subject.audio?).to be_false }
     end
   end
+
+  describe 'Scopes' do
+    describe '.with_video' do
+      before do
+        2.times { Talk.make! video_code: 123 }
+        Talk.make! video_code: nil
+      end
+      it { expect(Talk.with_video).to have(2).videos }
+    end
+
+    describe '.with_audio' do
+      before do
+        2.times { Talk.make! audio_code: 123 }
+        Talk.make! audio_code: nil
+      end
+      it { expect(Talk.with_audio).to have(2).videos }
+    end
+  end
 end
