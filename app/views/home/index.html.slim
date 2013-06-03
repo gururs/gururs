@@ -5,5 +5,5 @@
 .row
   - @video_talks.each do |talk|
     .span3
-      = link_to video_thumb(talk), talk.event
+      = link_to video_thumb_image(talk), talk.event
       strong = link_to talk.title, talk.event
