@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   has_many :authorizations, dependent: :destroy
+  has_many :talks
   validates :name, presence: true
 
   def self.new_with_session(params, session)

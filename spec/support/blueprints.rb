@@ -19,3 +19,9 @@ User.blueprint do
   password              { 'niceguy123' }
   password_confirmation { 'niceguy123' }
 end
+
+Talk.blueprint do
+  title { "What's new on Rails 4 and a bit of my experience with it" }
+  event { Event.make! }
+  user { User.make! }
+end
