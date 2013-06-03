@@ -14,5 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 
+//= require gururs/gururs.js
+//= require init.js
 //= require_tree ./lib
 
