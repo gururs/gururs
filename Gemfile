@@ -13,18 +13,20 @@ gem 'thin'
 gem 'jbuilder'
 gem 'inherited_resources'
 gem 'simple_form'
+gem 'rails_admin', github: 'sferik/rails_admin', branch: 'rails-4'
+gem 'cancan'
 
 # I18n
 gem 'rails-i18n'
 gem 'devise-i18n'
 
 # Authentication
-gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
+gem 'devise', '~> 3.0.0.rc'
 gem 'omniauth'
 gem 'omniauth-github'
 
 # Frontend stuff
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 2.1'
 gem 'slim-rails'
 gem 'initjs'
 gem 'flutie'
