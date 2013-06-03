@@ -37,14 +37,6 @@ gem 'coffee-rails', '4.0.0'
 gem 'uglifier'
 gem 'turbolinks'
 gem 'bootstrap-sass'
-#gem 'zurb-foundation'
-#gem 'angular-rails'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-#group :production do
-  #gem 'execjs'
-  #gem 'therubyracer', platform: :ruby
-#end
 
 #group :heroku do
   #gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
@@ -55,7 +47,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'machinist'
-  gem 'database_cleaner'
   gem 'capybara'
   gem 'pry'
   gem 'awesome_print'
