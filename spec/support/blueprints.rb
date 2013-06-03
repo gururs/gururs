@@ -13,15 +13,15 @@ Event.blueprint do
   happens_at    { '' }
 end
 
+Talk.blueprint do
+  title { "What's new on Rails 4 and a bit of my experience with it" }
+  event { Event.make! }
+  user  { User.make! }
+end
+
 User.blueprint do
   name                  { 'Some nice guy' }
   email                 { "someniceguy#{sn}@gmail.com" }
   password              { 'niceguy123' }
   password_confirmation { 'niceguy123' }
-end
-
-Talk.blueprint do
-  title { "What's new on Rails 4 and a bit of my experience with it" }
-  event { Event.make! }
-  user { User.make! }
 end

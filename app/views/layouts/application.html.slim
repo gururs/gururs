@@ -11,5 +11,6 @@ html
     = initjs_tag app_name: "Gururs"
     = render 'layouts/flash', flash: flash if flash.present?
     = render 'layouts/header'
-    = yield
+    .container
+      = yield
     = render 'layouts/footer'
