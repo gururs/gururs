@@ -1,0 +1,9 @@
+rvm:
+  - 2.0.0
+
+before_script:
+  - "cp config/database.sample.yml config/database.yml"
+  - "psql -c 'create database gururs_test;' -U postgres"
+  - "bundle exec rake db:migrate"
+
+script: "bundle exec rspec spec"

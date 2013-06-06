@@ -3,8 +3,7 @@ development:
   encoding: unicode
   database: gururs_development
   pool: 5
-  #username: postgres
-  #password:
+  username: postgres
   host: localhost
 
 test:
@@ -12,16 +11,6 @@ test:
   encoding: unicode
   database: gururs_test
   pool: 5
-  #username: postgres
-  #password:
-  min_messages: WARNING
-  host: localhost
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: gururs_production
-  pool: 5
   username: postgres
-  password:
+  min_messages: WARNING
   host: localhost
