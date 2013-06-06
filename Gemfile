@@ -10,6 +10,9 @@ gem 'foreigner'
 # Server
 gem 'thin'
 
+# I18n
+gem 'rails-i18n'
+
 # Improvements
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'simple_form'

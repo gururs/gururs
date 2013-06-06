@@ -1,0 +1,37 @@
+pt-BR:
+  activerecord:
+    models:
+      event:
+        one: Evento
+        other: Eventos
+      talk:
+        one: Talk
+        other: Talks
+      user:
+        one: Usuário
+        other: Usuários
+    attributes:
+      event:
+        name: Nome
+        enroll_url: Inscrição em
+        proposals_url: Propostas de talks em
+        happens_at: Data
+      talk:
+        title: Título
+        video_code: Código no YouTube
+        audio_code: Código no SoundCloud
+      user:
+        email: E-mail
+        name: Nome
+        password: Senha
+        password_confirmation: Confirmação de senha
+        remember_me: Lembrar senha
+  attributes:
+    event: Evento
+    event_id: Evento
+    talk: Talk
+    talk_id: Talk
+    user: Usuário
+    user_id: Usuário
+    created_at: Criado em
+    updated_at: Atualizado em

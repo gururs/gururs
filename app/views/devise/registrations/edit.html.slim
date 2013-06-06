@@ -1,32 +1,37 @@
-h2
-  | #{t(".edit_devise_resource", resource_name: resource_name.to_s.humanize)}
+h2 = t('.title', resource: t("activerecord.models.#{resource_name}.one"), default: 'Edit %{resource}')
 
-= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :name, :required => true, :autofocus => true
-    = f.input :email, :required => true
-    = f.input :password, :autocomplete => "off", :required => false
-    = f.input :password_confirmation, :required => false
-    = f.input :current_password, :required => true
-  = f.button :submit, t(".update")
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  = devise_error_messages!
 
-- if devise_mapping.omniauthable?
-  table.table
-    thead
-      tr
-        th = t(".provider")
-        td = t(".connect_disconnect")
-    tbody
-      - resource_class.omniauth_providers.each do |provider_name|
-        tr
-          td= provider_name.to_s.titleize
-          td
-            - provider = current_user.authorizations.provider(provider_name).first
-            = link_to t(".connect_your_provider", provider_name: provider_name.to_s.titleize), omniauth_authorize_path(resource_name, provider_name) unless provider.present?
-            = link_to t(".disconnect_from_provider", provider_name: provider_name.to_s.titleize), authorization_path(provider), method: :delete if provider.present?
+  div
+    = f.label :name
+    = f.text_field :name
 
-h3 = t(".cancel_my_account")
+  div
+    = f.label :email
+    = f.email_field :email
+
+  div
+    = f.label :password
+    = f.password_field :password, autocomplete: 'off'
+    i = t('.leave_blank_if_you_don_t_want_to_change_it', default: 'leave blank if you don\'t want to change it')
+
+  div
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+
+  div
+    = f.label :current_password
+    = f.password_field :current_password
+    i = t('.we_need_your_current_password_to_confirm_your_changes', default: 'we need your current password to confirm your changes')
+
+  div = f.submit t('helpers.submit.update', model: t("activerecord.models.#{resource_name}.one"), default: 'Update %{model}')
+
+h3 = t('.cancel_my_account', default: 'Cancel my account')
+
 p
-  | #{t(".unhappy")} #{link_to t(".cancel_my_account"), registration_path(resource_name), :data => { :confirm => t(".are_you_sure") }, :method => :delete}.
-= link_to t(".back"), :back
+  = t('.unhappy', default: 'Unhappy?') + ' '
+  = link_to t('.cancel_my_account', default: 'Cancel my account'), registration_path(resource_name), data: { confirm: t('.are_you_sure', default: 'Are you sure?') }, method: :delete
+  | .
+
+= link_to t('.back', default: 'Back'), :back

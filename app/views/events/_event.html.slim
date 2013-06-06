@@ -1,4 +1,4 @@
 .events
   = link_to event do
-    .span4 = event.happens_at
+    .span4 = l event.happens_at, format: :short
     .span4 = event.name
