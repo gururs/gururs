@@ -1,4 +1,4 @@
-# GURU-RS
+# GURU-RS [![Build Status](https://travis-ci.org/gururs/gururs.png)](https://travis-ci.org/gururs/gururs)
 
 GURU-RS site.
 
