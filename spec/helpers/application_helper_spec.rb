@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ApplicationHelper do
-  let(:talk) { double(video_code: '8_WHlskbwnc') }
+  let(:talk) { double(video_code: '8_WHlskbwnc', audio_code: '2F62974792') }
 
   describe "video_thumb_image" do
     it "returns a image from the YouTube's video based on parameters' video_code attribute" do
@@ -14,6 +14,13 @@ describe ApplicationHelper do
     it "returns a video player from YouTube based on parameters' video_code attribute" do
       expected_html = "<iframe allowfullscreen=\"true\" frameborder=\"0\" height=\"157\" src=\"https://www.youtube.com/embed/8_WHlskbwnc\" width=\"280\"></iframe>"
       expect(helper.video_thumb_video(talk)).to eql(expected_html)
+    end
+  end
+
+  describe "audio_thumb_audio" do
+    it "returns a audio player from YouTube based on parameters' audio_code attribute" do
+      expected_html = "<iframe frameborder=\"no\" height=\"160\" src=\"https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F62974792\" width=\"500\"></iframe>"
+      expect(helper.audio_thumb_audio(talk)).to eql(expected_html)
     end
   end
 end

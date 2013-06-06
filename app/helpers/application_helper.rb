@@ -10,4 +10,11 @@ module ApplicationHelper
                                allowfullscreen: true,
                                src:             "https://www.youtube.com/embed/#{entity_with_video.video_code}")
   end
+
+  def audio_thumb_audio(entity_with_audio)
+    content_tag('iframe', nil, width:           '500',
+                               height:          '160',
+                               frameborder:     'no',
+                               src:             "https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%#{entity_with_audio.audio_code}")
+  end
 end
