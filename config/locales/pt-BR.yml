@@ -35,3 +35,9 @@ pt-BR:
     user_id: Usuário
     created_at: Criado em
     updated_at: Atualizado em
+  keywords:
+    by: Por
+  events:
+    show:
+      enroll_button: Mais informações
+      proposals_button: Faça uma proposta de talk!

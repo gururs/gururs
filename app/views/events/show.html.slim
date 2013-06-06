@@ -1,16 +1,9 @@
-p#notice = notice
+header
+  h1 = resource.name
+  time = l resource.happens_at, format: :long
 
-p
-  strong Name:
-  = @event.name
-p
-  strong Enroll url:
-  = @event.enroll_url
-p
-  strong Proposals url:
-  = @event.proposals_url
-p
-  strong Happens at:
-  = @event.happens_at
+= link_to t('.enroll_button'), resource.enroll_url, id: 'enroll-btn', class: 'btn'
+- if resource.proposals_url.present?
+  = link_to t('.proposals_button'), resource.proposals_url, id: 'proposals-btn', class: 'btn'
 
-= link_to 'Back', events_path
+= render resource.talks
