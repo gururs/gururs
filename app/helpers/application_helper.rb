@@ -3,7 +3,7 @@ module ApplicationHelper
     image_tag("http://img.youtube.com/vi/#{entity_with_video.video_code}/0.jpg")
   end
 
-  def video_thumb_video(entity_with_video)
+  def video_thumb(entity_with_video)
     content_tag('iframe', nil, width:           '280',
                                height:          '157',
                                frameborder:     '0',
@@ -11,7 +11,7 @@ module ApplicationHelper
                                src:             "https://www.youtube.com/embed/#{entity_with_video.video_code}")
   end
 
-  def audio_thumb_audio(entity_with_audio)
+  def audio_thumb(entity_with_audio)
     content_tag('iframe', nil, width:           '500',
                                height:          '160',
                                frameborder:     'no',

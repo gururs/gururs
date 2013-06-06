@@ -1,8 +1,8 @@
 .talks
   - if talk.video?
-    = video_thumb_video talk
+    = video_thumb talk
   - if talk.audio?
-    = audio_thumb_audio talk
+    = audio_thumb talk
 
   = t('keywords.by') + ' ' + talk.user.name
   = talk.title

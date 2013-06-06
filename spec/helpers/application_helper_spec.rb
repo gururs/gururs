@@ -10,17 +10,17 @@ describe ApplicationHelper do
     end
   end
 
-  describe "video_thumb_video" do
+  describe "video_thumb" do
     it "returns a video player from YouTube based on parameters' video_code attribute" do
       expected_html = "<iframe allowfullscreen=\"true\" frameborder=\"0\" height=\"157\" src=\"https://www.youtube.com/embed/8_WHlskbwnc\" width=\"280\"></iframe>"
-      expect(helper.video_thumb_video(talk)).to eql(expected_html)
+      expect(helper.video_thumb(talk)).to eql(expected_html)
     end
   end
 
-  describe "audio_thumb_audio" do
-    it "returns a audio player from YouTube based on parameters' audio_code attribute" do
+  describe "audio_thumb" do
+    it "returns a audio player from SoundCloud based on parameters' audio_code attribute" do
       expected_html = "<iframe frameborder=\"no\" height=\"160\" src=\"https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F62974792\" width=\"500\"></iframe>"
-      expect(helper.audio_thumb_audio(talk)).to eql(expected_html)
+      expect(helper.audio_thumb(talk)).to eql(expected_html)
     end
   end
 end
