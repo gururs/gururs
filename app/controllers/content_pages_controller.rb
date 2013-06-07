@@ -5,5 +5,6 @@ class ContentPagesController < ApplicationController
   end
 
   def about
+    @managers = User.where(admin: true)
   end
 end

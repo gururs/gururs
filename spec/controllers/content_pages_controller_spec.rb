@@ -31,4 +31,13 @@ describe ContentPagesController do
       expect(assigns(:video_talks)).to have(2).talks
     end
   end
+
+  describe "GET 'about'" do
+    it "assigns @managers with admin users" do
+      User.make!(admin: false)
+      admin = User.make!(admin: true)
+      get :about
+      expect(assigns(:managers).to_a).to eql([admin])
+    end
+  end
 end
