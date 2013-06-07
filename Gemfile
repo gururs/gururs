@@ -16,6 +16,8 @@ gem 'rails-i18n'
 # Improvements
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'simple_form'
+
+gem 'font-awesome-sass-rails' # rails_admin dependence
 gem 'rails_admin', github: 'sferik/rails_admin', branch: 'rails-4'
 gem 'cancan'
 
