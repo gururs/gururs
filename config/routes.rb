@@ -5,7 +5,7 @@ Gururs::Application.routes.draw do
   resources :authorizations, only: [:destroy]
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  root to: 'home#index'
+  root to: 'content_pages#home'
 
-  get '/about' => 'home#about'
+  get '/about' => 'content_pages#about'
 end
