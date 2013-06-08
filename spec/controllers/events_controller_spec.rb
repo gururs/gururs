@@ -9,6 +9,13 @@ describe EventsController do
       get :index
       expect(assigns(:events)).to eq([event])
     end
+
+    it "orders @events by happens_at attribute DESC" do
+      first_event = Event.make!(happens_at: 1.month.from_now)
+      last_event  = Event.make!(happens_at: 2.months.from_now)
+      get :index
+      expect(assigns(:events).to_a).to eq([last_event, first_event])
+    end
   end
 
   describe "GET show" do
