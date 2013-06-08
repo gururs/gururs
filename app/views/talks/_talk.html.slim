@@ -4,5 +4,8 @@
   - if talk.audio?
     = audio_thumb talk
 
-  = t('keywords.by') + ' ' + talk.user.name
+  - if talk.user
+    = t('keywords.by')
+    |  #{talk.user.name}
+
   = talk.title
