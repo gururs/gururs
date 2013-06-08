@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
         user.email = auth.info.email if auth.info.email.present?
         user.name = auth.info.name
         user.image = auth.info.image
+        user.github_username = auth.extra.raw_info.login if auth.extra and auth.extra.raw_info
         user.authorizations.build(provider: auth.provider, uid: auth.uid)
       end
     end
