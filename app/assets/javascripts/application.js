@@ -17,4 +17,4 @@
 //= require gururs/gururs.js
 //= require init.js
 //= require_tree ./lib
-
+//= require bootstrap
