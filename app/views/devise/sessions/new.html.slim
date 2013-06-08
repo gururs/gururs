@@ -14,6 +14,6 @@ h2 = t('.sign_in', default: 'Sign in')
       = f.check_box :remember_me
       = f.label :remember_me
 
-  div = f.submit t('.sign_in', default: 'Sign in')
+  div = f.submit t('.sign_in', default: 'Sign in'), class: 'btn btn-primary'
 
 = render 'devise/shared/links'

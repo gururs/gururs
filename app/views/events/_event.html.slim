@@ -1,4 +1,4 @@
 .events
-  = link_to event do
-    .span4 = l event.happens_at, format: :short
-    .span4 = event.name
+  h2
+    = link_to event.name, event
+    span.pull-right = l event.happens_at, format: :short

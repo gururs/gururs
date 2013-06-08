@@ -7,6 +7,6 @@ h2 = t('.resend_confirmation_instructions', default: 'Resend confirmation instru
     = f.label :email
     = f.email_field :email
 
-  div = f.submit t('.resend_confirmation_instructions', default: 'Resend confirmation instructions')
+  div = f.submit t('.resend_confirmation_instructions', default: 'Resend confirmation instructions'), class: 'btn btn-primary'
 
 = render 'devise/shared/links'

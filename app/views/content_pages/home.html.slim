@@ -1,9 +1,31 @@
-.row
-  .span8
-    = render @events
+section.highlight[data-url=image_path('header.jpg')]
+  .container
+    .row
+      .span6
+        = link_to 'logo', root_path, class: 'logo'
+      .span8
+        h1 Este é o Grupo de Usuários Ruby do Rio Grande do Sul
+        a.btn.btn-large.btn-cta href="#"
+          | Próximo evento
+          span 12/08/2013
 
-.row
-  - @video_talks.each do |talk|
-    .span3
-      = link_to video_thumb_image(talk), talk.event
-      strong = link_to talk.title, talk.event
+section.events
+  .container
+    .row
+      .span12
+        h1.title Próximos Eventos
+        = render @events
+
+section.videos
+  .container
+    .row
+      .span12
+        h1.title Sobre o Guru/RS
+        - @video_talks.each do |talk|
+          .span4.sp-video
+            = link_to video_thumb_image(talk), talk.event
+            h2 = link_to talk.title, talk.event
+            - if talk.user
+              p.name
+                = talk.user.name
+

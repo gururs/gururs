@@ -8,6 +8,14 @@ h2 = t('.title', resource: t("activerecord.models.#{resource_name}.one"), defaul
     = f.text_field :name
 
   div
+    = f.label :github_username
+    = f.text_field :github_username
+
+  div
+    = f.label :twitter_username
+    = f.text_field :twitter_username
+
+  div
     = f.label :email
     = f.email_field :email
 
@@ -25,7 +33,7 @@ h2 = t('.title', resource: t("activerecord.models.#{resource_name}.one"), defaul
     = f.password_field :current_password
     i = t('.we_need_your_current_password_to_confirm_your_changes', default: 'we need your current password to confirm your changes')
 
-  div = f.submit t('helpers.submit.update', model: t("activerecord.models.#{resource_name}.one"), default: 'Update %{model}')
+  div = f.submit t('helpers.submit.update', model: t("activerecord.models.#{resource_name}.one"), default: 'Update %{model}'), class: 'btn btn-primary'
 
 h3 = t('.cancel_my_account', default: 'Cancel my account')
 

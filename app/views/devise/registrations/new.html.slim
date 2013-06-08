@@ -8,6 +8,14 @@ h2 = t('.sign_up', default: 'Sign up')
     = f.text_field :name
 
   div
+    = f.label :github_username
+    = f.text_field :github_username
+
+  div
+    = f.label :twitter_username
+    = f.text_field :twitter_username
+
+  div
     = f.label :email
     = f.email_field :email
 
@@ -19,6 +27,6 @@ h2 = t('.sign_up', default: 'Sign up')
     = f.label :password_confirmation
     = f.password_field :password_confirmation
 
-  div = f.submit t('.sign_up', default: 'Sign up')
+  div = f.submit t('.sign_up', default: 'Sign up'), class: 'btn btn-primary'
 
 = render 'devise/shared/links'
