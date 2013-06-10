@@ -246,4 +246,28 @@ RailsAdmin.config do |config|
   #     # using `field` instead of `configure` will exclude all other fields and force the ordering
   # end
 
+  config.model "Event" do
+    edit do
+      fields_of_type :datetime do
+        date_format :default
+      end
+    end
+  end
+
+  config.model "Talk" do
+    edit do
+      fields_of_type :datetime do
+        date_format :default
+      end
+    end
+  end
+
+  config.model "User" do
+    edit do
+      fields_of_type :datetime do
+        date_format :default
+      end
+    end
+  end
+
 end
