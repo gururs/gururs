@@ -5,15 +5,17 @@ section.highlight[data-url=image_path('header.jpg')]
         = link_to 'logo', root_path, class: 'logo'
       .span8
         h1 Este é o Grupo de Usuários Ruby do Rio Grande do Sul
-        a.btn.btn-large.btn-cta href="#"
-          | Próximo evento
-          span 12/08/2013
+        - if @events.any?
+          a.btn.btn-large.btn-cta href="#events"
+            | Próximo evento
+            span = l @events.first.happens_at, format: :short
 
 section.events
   .container
     .row
       .span12
         h1.title Próximos Eventos
+        a[name="events"]
         = render @events
 
 section.videos
