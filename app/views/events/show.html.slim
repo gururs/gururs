@@ -1,9 +1,10 @@
-header
-  h1 = resource.name
-  time = l resource.happens_at, format: :long
+.container
+  header
+    h1 = resource.name
+    time = l resource.happens_at, format: :long
 
-= link_to t('.enroll_button'), resource.enroll_url, id: 'enroll-btn', class: 'btn'
-- if resource.proposals_url.present?
-  = link_to t('.proposals_button'), resource.proposals_url, id: 'proposals-btn', class: 'btn'
+  = link_to t('.enroll_button'), resource.enroll_url, id: 'enroll-btn', class: 'btn'
+  - if resource.proposals_url.present?
+    = link_to t('.proposals_button'), resource.proposals_url, id: 'proposals-btn', class: 'btn'
 
-= render resource.talks
+  = render resource.talks
