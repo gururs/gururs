@@ -21,11 +21,11 @@ header
                   li= link_to 'Sair', destroy_user_session_path, method: :delete if user_signed_in?
 
   - if controller.controller_name == 'content_pages' and controller.action_name == 'home'
-    section.highlight[data-url=image_path('header.jpg')]
+    section.home-highlight.highlight-image[data-url=image_path('home-highlight.jpg')]
       .container
         .row
           .span6
-            = link_to 'logo', root_path, class: 'logo'
+            = link_to 'GURU-RS', root_path, class: 'logo'
           .span8
             h1 Este é o Grupo de Usuários Ruby do Rio Grande do Sul
             - if @events.any?
@@ -33,4 +33,6 @@ header
                 | Próximo evento
                 span = l @events.first.happens_at, format: :short
   - else
-    = link_to image_tag('logo.png'), root_path, class: 'logo'
+    section.highlight.highlight-image[data-url=image_path('highlight.jpg')]
+      .container
+        = link_to 'GURU-RS', root_path, class: 'logo'
