@@ -29,7 +29,7 @@ header
           .span8
             h1 Este é o Grupo de Usuários Ruby do Rio Grande do Sul
             - if @events.any?
-              a.btn.btn-large.btn-cta href="#events"
+              a.btn.btn-large.btn-next-event href="#events"
                 | Próximo evento
                 span = l @events.first.happens_at, format: :short
   - else
