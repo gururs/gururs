@@ -1,5 +1,5 @@
 .flash
   - for key, message in flash
-    div class="#{key} wrapper"
-      div class=key
-        = message
+    - key = '' if key == 'alert'
+    div class="#{key}"
+      = message
