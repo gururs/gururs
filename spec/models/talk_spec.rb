@@ -38,7 +38,7 @@ describe Talk do
   describe 'Scopes' do
     describe '.with_video' do
       before do
-        2.times { Talk.make! video_code: 123 }
+        2.times { Talk.make! video_code: 123, audio_code: nil }
         Talk.make! video_code: nil
       end
       it { expect(Talk.with_video).to have(2).videos }
@@ -46,7 +46,7 @@ describe Talk do
 
     describe '.with_audio' do
       before do
-        2.times { Talk.make! audio_code: 123 }
+        2.times { Talk.make! audio_code: 123, video_code: nil }
         Talk.make! audio_code: nil
       end
       it { expect(Talk.with_audio).to have(2).videos }

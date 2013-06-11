@@ -1,10 +1,26 @@
-.container
-  header
-    h1 = resource.name
-    time = l resource.happens_at, format: :long
+section.content-highlighted
+  .container
+    h1.title
+      = resource.name
+      small
+        | &nbsp;
+        = l resource.happens_at, format: :long
 
-  = link_to t('.enroll_button'), resource.enroll_url, id: 'enroll-btn', class: 'btn'
-  - if resource.proposals_url.present?
-    = link_to t('.proposals_button'), resource.proposals_url, id: 'proposals-btn', class: 'btn'
+    .highlighted-inverse
+      - if resource.enroll_url.present?
+        = link_to t('.enroll_button'), resource.enroll_url, class: 'btn-enroll btn btn-large'
 
-  = render resource.talks
+      - if resource.proposals_url.present?
+        = link_to t('.proposals_button'), resource.proposals_url, class: 'btn-proposals btn btn-large'
+
+- if resource.talks.with_video.any?
+  section.videos
+    .container
+      h1.title Vídeos
+      = render resource.talks.with_video, { embed: true }
+
+- if resource.talks.with_audio.any?
+  section.audios
+    .container
+      h1.title Áudios
+      = render resource.talks.with_audio

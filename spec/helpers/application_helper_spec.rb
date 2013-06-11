@@ -12,7 +12,7 @@ describe ApplicationHelper do
 
   describe "video_thumb" do
     it "returns a video player from YouTube based on parameters' video_code attribute" do
-      expected_html = "<iframe allowfullscreen=\"true\" frameborder=\"0\" height=\"157\" src=\"https://www.youtube.com/embed/8_WHlskbwnc\" width=\"280\"></iframe>"
+      expected_html = "<iframe allowfullscreen=\"true\" frameborder=\"0\" height=\"225\" src=\"https://www.youtube.com/embed/8_WHlskbwnc\" width=\"300\"></iframe>"
       expect(helper.video_thumb(talk)).to eql(expected_html)
     end
   end
