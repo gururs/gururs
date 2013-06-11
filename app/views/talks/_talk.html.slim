@@ -4,15 +4,19 @@
       = video_thumb(talk)
     - else
       = link_to video_thumb_image(talk), talk.event
-    h2 = link_to talk.title, talk.event
+
+    - if defined?(embed)
+      h2 = talk.title
+    - else
+      h2 = link_to talk.title, talk.event
     - if talk.user
       p
         = t('keywords.by')
         |  #{talk.user.name}
 - elsif talk.audio?
-  .span4.box-audio
+  .box-audio
     = audio_thumb(talk)
-    h2 = link_to talk.title, talk.event
+    h2 = talk.title
     - if talk.user
       p
         = t('keywords.by')

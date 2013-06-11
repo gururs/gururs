@@ -1,3 +1,9 @@
-.users
-  = image_tag user.avatar_url, size: '100x100'
-  strong = user.name
+.user-box.span3
+  .avatar
+    = image_tag user.avatar_url, size: '100x100'
+  .name
+    strong = user.name
+  - if user.github_username.present?
+    = link_to user.github_username, "http://github.com/#{user.github_username}", class: 'github-icon'
+  - if user.twitter_username.present?
+    = link_to user.twitter_username, "http://twitter.com/#{user.twitter_username}", class: 'twitter-icon'

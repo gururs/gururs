@@ -19,7 +19,7 @@ describe ApplicationHelper do
 
   describe "audio_thumb" do
     it "returns a audio player from SoundCloud based on parameters' audio_code attribute" do
-      expected_html = "<iframe frameborder=\"no\" height=\"160\" src=\"https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F62974792\" width=\"500\"></iframe>"
+      expected_html = "<iframe frameborder=\"no\" height=\"160\" src=\"https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F62974792\" width=\"940\"></iframe>"
       expect(helper.audio_thumb(talk)).to eql(expected_html)
     end
   end
