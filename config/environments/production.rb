@@ -1,4 +1,7 @@
 Gururs::Application.configure do
+
+  config.middleware.use Rack::GoogleAnalytics, :tracker => 'UA-41637154-1'
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

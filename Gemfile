@@ -35,7 +35,7 @@ gem 'jquery-rails', '~> 2.1'
 gem 'slim-rails'
 gem 'initjs'
 gem 'flutie'
-#gem 'rack-google-analytics'
+gem 'rack-google-analytics'
 
 # Assets
 gem 'sass-rails', '4.0.0.rc1'
