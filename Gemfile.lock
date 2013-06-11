@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: git://github.com/sferik/rails_admin.git
-  revision: 18db7a807c7d3645050f94abeee3e85003ed910f
+  revision: 53ef7139d3bab8d05361bf28530c86d92989182f
   branch: rails-4
   specs:
     rails_admin (0.4.9)
@@ -133,11 +133,13 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.1)
     mime-types (1.23)
+    mini_portile (0.5.0)
     minitest (4.7.4)
     multi_json (1.7.6)
     multipart-post (1.2.0)
     nested_form (0.3.2)
-    nokogiri (1.5.9)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
