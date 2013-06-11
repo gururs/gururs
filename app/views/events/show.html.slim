@@ -11,7 +11,7 @@ section.content-highlighted
         = link_to t('.enroll_button'), resource.enroll_url, class: 'btn-enroll btn btn-large'
 
       - if resource.proposals_url.present?
-        = link_to t('.proposals_button'), resource.proposals_url, class: 'btn-proposals btn btn-large'
+        = link_to t('.proposals_button'), resource.proposals_url, class: 'btn-proposals btn btn-large pull-right'
 
 - if resource.talks.with_video.any?
   section.videos
