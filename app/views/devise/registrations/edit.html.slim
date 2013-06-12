@@ -1,46 +1,49 @@
 .container
-  h2 = t('.title', resource: t("activerecord.models.#{resource_name}.one"), default: 'Edit %{resource}')
+  .form-container.offset3
+    .well.well-large
+      .center
+        h2 = t('.title', resource: t("activerecord.models.#{resource_name}.one"), default: 'Edit %{resource}')
+      br/
+      .form-offset
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+          = devise_error_messages!
 
-  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-    = devise_error_messages!
+          div
+            = f.label :name
+            = f.text_field :name, class: 'span5'
 
-    div
-      = f.label :name
-      = f.text_field :name
+          div
+            = f.label :github_username
+            = f.text_field :github_username, class: 'span5'
 
-    div
-      = f.label :github_username
-      = f.text_field :github_username
+          div
+            = f.label :twitter_username
+            = f.text_field :twitter_username, class: 'span5'
 
-    div
-      = f.label :twitter_username
-      = f.text_field :twitter_username
+          div
+            = f.label :email
+            = f.email_field :email, class: 'span5'
+          br/
+          .well
+            h4 Troca de senha
+            h5 Se deseja trocar de senha, preencha os dois campos a seguir. Caso o contrário deixe-os em branco.
+            div
+              = f.label :password
+              = f.password_field :password, autocomplete: 'off', class: 'span4'
 
-    div
-      = f.label :email
-      = f.email_field :email
+            div
+              = f.label :password_confirmation
+              = f.password_field :password_confirmation, class: 'span4'
+          div
+            = f.label :current_password
+            = f.password_field :current_password, class: 'span5'
+            i = t('.we_need_your_current_password_to_confirm_your_changes', default: 'we need your current password to confirm your changes')
+          br/
+          div = f.submit t('helpers.submit.update', model: t("activerecord.models.#{resource_name}.one"), default: 'Update %{model}'), class: 'btn btn-large btn-primary span5'
+        hr
+        h3 = t('.cancel_my_account', default: 'Cancel my account')
 
-    div
-      = f.label :password
-      = f.password_field :password, autocomplete: 'off'
-      i = t('.leave_blank_if_you_don_t_want_to_change_it', default: 'leave blank if you don\'t want to change it')
-
-    div
-      = f.label :password_confirmation
-      = f.password_field :password_confirmation
-
-    div
-      = f.label :current_password
-      = f.password_field :current_password
-      i = t('.we_need_your_current_password_to_confirm_your_changes', default: 'we need your current password to confirm your changes')
-
-    div = f.submit t('helpers.submit.update', model: t("activerecord.models.#{resource_name}.one"), default: 'Update %{model}'), class: 'btn btn-primary'
-
-  h3 = t('.cancel_my_account', default: 'Cancel my account')
-
-  p
-    = t('.unhappy', default: 'Unhappy?') + ' '
-    = link_to t('.cancel_my_account', default: 'Cancel my account'), registration_path(resource_name), data: { confirm: t('.are_you_sure', default: 'Are you sure?') }, method: :delete
-    | .
-
-  = link_to t('.back', default: 'Back'), :back
+        p
+          = t('.unhappy', default: 'Unhappy?') + ' '
+          = link_to t('.cancel_my_account', default: 'Cancel my account'), registration_path(resource_name), data: { confirm: t('.are_you_sure', default: 'Are you sure?') }, method: :delete
+          | .

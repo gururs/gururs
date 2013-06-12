@@ -1,20 +1,25 @@
 .container
-  h2 = t('.sign_in', default: 'Sign in')
+  .form-container.offset3
+    .well.well-large
+      .center
+        h2 = t('.sign_in', default: 'Sign in')
+      br/
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        div
+          = f.label :email
+          = f.email_field :email, class: 'span5'
 
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    div
-      = f.label :email
-      = f.email_field :email
+        div
+          = f.label :password
+          = f.password_field :password, class: 'span5'
 
-    div
-      = f.label :password
-      = f.password_field :password
+        - if devise_mapping.rememberable?
+          div.form-inline
+            = f.check_box :remember_me, class: 'check-box', style: 'margin-top: -5px'
+            = f.label :remember_me, class: 'check-box'
 
-    - if devise_mapping.rememberable?
-      div
-        = f.check_box :remember_me
-        = f.label :remember_me
+        .center
+          div = f.submit t('.sign_in', default: 'Sign in'), class: 'btn btn-large btn-primary span5'
 
-    div = f.submit t('.sign_in', default: 'Sign in'), class: 'btn btn-primary'
-
-  = render 'devise/shared/links'
+      hr
+      = render 'devise/shared/links'
