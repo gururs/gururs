@@ -21,11 +21,14 @@ pt-BR:
         video_code: Código no YouTube
         audio_code: Código no SoundCloud
       user:
+        current_password: Senha atual
         email: E-mail
+        github_username: Nome de usuário no GitHub
         name: Nome
         password: Senha
         password_confirmation: Confirmação de senha
         remember_me: Lembrar senha
+        twitter_username: Nome de usuário no Twitter
   attributes:
     event: Evento
     event_id: Evento
