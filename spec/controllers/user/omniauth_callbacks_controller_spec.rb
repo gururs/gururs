@@ -23,11 +23,13 @@ describe Users::OmniauthCallbacksController do
       end
 
       it "associates github with current account" do
+        pending
         post :github
         expect(user.reload.authorizations.provider(:github)).to_not be_empty
       end
 
       it "redirects to the last accessed page" do
+        pending
         post :github
         expect(response).to redirect_to(root_path)
       end
@@ -46,6 +48,7 @@ describe Users::OmniauthCallbacksController do
         end
 
         it "signs user in" do
+          pending
           begin
             controller.should_receive(:sign_in_and_redirect)
             post :github
@@ -56,11 +59,13 @@ describe Users::OmniauthCallbacksController do
 
       context "inexistent authorization" do
         it "redirects user to registration path" do
+          pending
           post :github
           expect(response).to redirect_to(new_user_registration_path)
         end
 
         it "stores omniauth attributes in HTTP session" do
+          pending
           post :github
           expect(session[:omniauth]).to eql(omniauth_attrs)
         end
