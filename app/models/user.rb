@@ -21,7 +21,9 @@ class User < ActiveRecord::Base
 
   def avatar_url(size = 100)
     return image if image.present?
-    "http://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?s=#{size}"
+    host = "http://www.gururs.com"
+    default_image = ActionController::Base.helpers.asset_path('default_avatar.png')
+    "http://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?s=#{size}&d=#{host}#{default_image}"
   end
 end
 

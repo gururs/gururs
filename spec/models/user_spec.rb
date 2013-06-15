@@ -86,16 +86,18 @@ describe User do
       before do
         @user.image = nil
         @email_md5 = Digest::MD5.new.update(@user.email)
+        @default_image = "http://www.gururs.com" +
+          ActionController::Base.helpers.asset_path('default_avatar.png')
       end
 
       it "should return gravatar of user without image" do
-        expected = "http://gravatar.com/avatar/#{@email_md5}.jpg?s=100"
+        expected = "http://gravatar.com/avatar/#{@email_md5}.jpg?s=100&d=#{@default_image}"
         expect(@user.avatar_url).to eql(expected)
       end
 
       it "should return gravatar of user without image and different size" do
         size = 200
-        expected = "http://gravatar.com/avatar/#{@email_md5}.jpg?s=#{size}"
+        expected = "http://gravatar.com/avatar/#{@email_md5}.jpg?s=#{size}&d=#{@default_image}"
         expect(@user.avatar_url(size)).to eql(expected)
       end
     end
