@@ -73,4 +73,31 @@ describe User do
   describe 'Associations' do
     it { should have_many :talks }
   end
+
+  describe 'avatar_url' do
+    context "user with image" do
+      it "should return image of user" do
+        @user.image = "http://my-image.com"
+        expect(@user.avatar_url).to eql(@user.image)
+      end
+    end
+
+    context "user without image" do
+      before do
+        @user.image = nil
+        @email_md5 = Digest::MD5.new.update(@user.email)
+      end
+
+      it "should return gravatar of user without image" do
+        expected = "http://gravatar.com/avatar/#{@email_md5}.jpg?s=100"
+        expect(@user.avatar_url).to eql(expected)
+      end
+
+      it "should return gravatar of user without image and different size" do
+        size = 200
+        expected = "http://gravatar.com/avatar/#{@email_md5}.jpg?s=#{size}"
+        expect(@user.avatar_url(size)).to eql(expected)
+      end
+    end
+  end
 end
