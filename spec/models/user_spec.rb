@@ -68,6 +68,35 @@ describe User do
     it{ should validate_presence_of :name }
     it{ should validate_presence_of :email }
     it{ should validate_presence_of :password }
+
+    context 'admin_time' do
+      it "when user is admin" do
+        @user.admin = true
+        should validate_presence_of :admin_time_from
+      end
+
+      it "when user isnt admin" do
+        @user.admin = false
+        should_not validate_presence_of :admin_time_from
+      end
+    end
+  end
+
+  describe 'admin_period' do
+    before { @user = User.make!(admin: true, admin_time_from: 2010) }
+
+    context 'when admin_time_to is present' do
+      it "should show complete message" do
+        @user.admin_time_to = Date.today.year
+        expect(@user.admin_period).to eql ("De 2010 até #{@user.admin_time_to}.")
+      end
+    end
+
+    context 'when admin_time_to is not present' do
+      it "should show until now" do
+        expect(@user.admin_period).to eql ("De 2010 até agora.")
+      end
+    end
   end
 
   describe 'Associations' do

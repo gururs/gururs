@@ -5,6 +5,7 @@ class ContentPagesController < ApplicationController
   end
 
   def about
-    @managers = User.where(admin: true)
+    @managers = User.where("admin = ? AND admin_time_to IS NULL ", true)
+    @ex_managers = User.where("admin = ? AND admin_time_to IS NOT NULL ", true)
   end
 end

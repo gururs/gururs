@@ -6,6 +6,17 @@ class User < ActiveRecord::Base
   has_many :authorizations, dependent: :destroy
   has_many :talks
   validates :name, presence: true
+  validates :admin_time_from, presence: true, if: :admin?
+
+  def admin_period
+    return unless admin == true
+
+    if admin_time_to.present?
+      "De #{admin_time_from} até #{admin_time_to}."
+    else
+      "De #{admin_time_from} até agora."
+    end
+  end
 
   def self.new_with_session(params, session)
     super.tap do |user|

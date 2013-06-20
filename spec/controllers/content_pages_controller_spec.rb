@@ -35,7 +35,7 @@ describe ContentPagesController do
   describe "GET 'about'" do
     it "assigns @managers with admin users" do
       User.make!(admin: false)
-      admin = User.make!(admin: true)
+      admin = User.make!(admin: true, admin_time_from: 2012)
       get :about
       expect(assigns(:managers).to_a).to eql([admin])
     end

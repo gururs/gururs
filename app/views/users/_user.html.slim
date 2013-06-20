@@ -3,6 +3,8 @@
     = image_tag user.avatar_url, size: '100x100'
   .name
     strong = user.name
+  .admin_time
+    = user.admin_period
   - if user.github_username.present?
     = link_to user.github_username, "http://github.com/#{user.github_username}", class: 'github-icon'
   - if user.twitter_username.present?

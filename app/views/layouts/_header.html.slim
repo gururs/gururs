@@ -7,7 +7,7 @@ header
             li= link_to 'Sobre o grupo', about_path
             li= link_to 'Eventos', events_path
             li= link_to 'Membros', users_path
-            li= link_to 'Lista', 'https://groups.google.com/forum/#!forum/guru-rs', target: :blanck
+            li= link_to 'Lista', 'https://groups.google.com/forum/#!forum/guru-rs', target: :blank
           ul.nav.secondary-nav.pull-right
             li= link_to 'Entrar', new_user_session_path unless user_signed_in?
             li= link_to 'Me cadastrar', new_user_registration_path unless user_signed_in?

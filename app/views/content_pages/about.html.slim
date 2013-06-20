@@ -6,5 +6,11 @@
   p Se você se sentir à vontade para propor assuntos novos (ou antigos) para abordagem, sugestões em eventos ou contribuições de qualquer tipo, estaremos sempre abertos. Falar com um dos organizadores é apenas uma das formas de fazê-lo, já que acreditamos que o grupo é feito pelo conjunto dos usuários de Ruby da região.
 
   br/
-  h2 Mantenedores
-  = render @managers
+  - if @managers.any?
+    h2 Mantenedores
+    = render @managers
+
+  div.ex_maintainers
+  - if @ex_managers.any?
+    h2 Ex-Mantenedores
+    = render @ex_managers

@@ -29,6 +29,8 @@ pt-BR:
         password_confirmation: Confirmação de senha
         remember_me: Lembrar senha
         twitter_username: Nome de usuário no Twitter
+        admin_time_from: Admin desde
+        admin_time_to: Admin até
   attributes:
     event: Evento
     event_id: Evento
