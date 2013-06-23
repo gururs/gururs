@@ -8,7 +8,6 @@ window.Gururs =
       # if you're not using the turbolinks, there's no difference between init and initPage.
 
     init: ->
-      $('.highlight-image').backstretch($('section.highlight-image').attr('data-url'))
       @flash()
 
     finish: ->
