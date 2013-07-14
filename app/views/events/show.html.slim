@@ -24,3 +24,9 @@ section.content-highlighted
     .container
       h1.title Áudios
       = render resource.talks.with_audio
+
+- if resource.talks.without_media.any?
+  section.videos
+    .container
+      h1.title Não gravados
+      = render resource.talks.without_media

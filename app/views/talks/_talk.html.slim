@@ -21,4 +21,9 @@
       p
         = t('keywords.by')
         |  #{talk.user.name}
-
+- elsif talk.no_media?
+    h2 = talk.title
+    - if talk.user
+      p
+        = t('keywords.by')
+        |  #{talk.user.name}
