@@ -4,7 +4,7 @@
   .name
     strong = user.name
   .admin_time
-    = user.admin_period
+    = user.member_since
   - if user.github_username.present?
     = link_to user.github_username, "http://github.com/#{user.github_username}", class: 'github-icon'
   - if user.twitter_username.present?

@@ -82,19 +82,26 @@ describe User do
     end
   end
 
-  describe 'admin_period' do
-    before { @user = User.make!(admin: true, admin_time_from: 2010) }
+  describe 'member_since' do
+    before { @admin = User.make!(admin: true, admin_time_from: 2010) }
+    before { @no_admin = User.make!(admin: false, created_at: Date.today) }
 
-    context 'when admin_time_to is present' do
+    context 'admin user when admin_time_to is present' do
       it "should show complete message" do
-        @user.admin_time_to = Date.today.year
-        expect(@user.admin_period).to eql ("De 2010 até #{@user.admin_time_to}.")
+        @admin.admin_time_to = Date.today.year
+        expect(@admin.member_since).to eql ("De 2010 até #{@admin.admin_time_to}.")
       end
     end
 
-    context 'when admin_time_to is not present' do
+    context 'admin user when admin_time_to is not present' do
       it "should show until now" do
-        expect(@user.admin_period).to eql ("De 2010 até agora.")
+        expect(@admin.member_since).to eql ("De 2010 até agora.")
+      end
+    end
+
+    context 'simple user' do
+      it "should show the year the user was created until now" do
+        expect(@no_admin.member_since).to eql ("De #{@no_admin.created_at.year} até agora.")
       end
     end
   end
