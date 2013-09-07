@@ -8,14 +8,15 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :admin_time_from, presence: true, if: :admin?
 
-  def admin_period
-    return unless admin == true
-
-    if admin_time_to.present?
-      "De #{admin_time_from} até #{admin_time_to}."
+  def member_since
+    if admin?
+      from = admin_time_from
+      to = (admin_time_to.present? ? admin_time_to : "agora")
     else
-      "De #{admin_time_from} até agora."
+      from = created_at.year
+      to = "agora"
     end
+    "De #{from} até #{to}."
   end
 
   def self.new_with_session(params, session)
